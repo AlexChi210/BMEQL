@@ -5,3 +5,9 @@
 
 # Optionally track processed large CSVs (comment out if not needed)
 #/data/processed/*.csv filter=lfs diff=lfs merge=lfs -text
+data[[:space:]]copy/** filter=lfs diff=lfs merge=lfs -text
+data/*.csv filter=lfs diff=lfs merge=lfs -text
+data/*.xlsx filter=lfs diff=lfs merge=lfs -text
+*.zip filter=lfs diff=lfs merge=lfs -text
+*.xmind filter=lfs diff=lfs merge=lfs -text
+Airport_Codes_assess_prep.csv filter=lfs diff=lfs merge=lfs -text

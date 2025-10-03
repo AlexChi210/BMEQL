@@ -6,9 +6,10 @@ import pandas as pd
 def build_round_trip_id(df: pd.DataFrame, origin_col: str = "ORIGIN", dest_col: str = "DEST") -> pd.Series:
     origins = df[origin_col].astype(str).str.upper().str.strip()
     dests = df[dest_col].astype(str).str.upper().str.strip()
-    pair = pd.concat([origins, dests], axis=1)
-    sorted_pair = pair.apply(lambda r: "-".join(sorted([r[0], r[1]])), axis=1)
-    return sorted_pair
+    pair = pd.concat([origins.rename("orig"), dests.rename("dest")], axis=1)
+    first = pair.min(axis=1)
+    second = pair.max(axis=1)
+    return first.str.cat(second, sep="-")
 
 
 def build_leg_direction(df: pd.DataFrame, origin_col: str = "ORIGIN", dest_col: str = "DEST") -> pd.Series:
