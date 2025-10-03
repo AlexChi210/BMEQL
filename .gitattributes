@@ -1,0 +1,7 @@
+# Track large data files via Git LFS
+# Raw inputs
+/data/raw/*.csv filter=lfs diff=lfs merge=lfs -text
+/data/*.xlsx filter=lfs diff=lfs merge=lfs -text
+
+# Optionally track processed large CSVs (comment out if not needed)
+#/data/processed/*.csv filter=lfs diff=lfs merge=lfs -text

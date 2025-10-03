@@ -1,0 +1,15 @@
+# Python
+.venv/
+__pycache__/
+.ipynb_checkpoints/
+
+# Data outputs (keep raw tracked via LFS)
+data/processed/*.parquet
+data/processed/*.csv
+
+# Docs outputs
+docs/*.csv
+docs/*.html
+
+
+
